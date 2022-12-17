@@ -280,7 +280,7 @@ ID_ROLE
 /*==============================================================*/
 create table UTILIZADORES_CODIGOS (
    ID_UTILIZADOR        INT4                 not null,
-   ID_UTILIZADORES_CODIGO VARCHAR                not null,
+   ID_UTILIZADORES_CODIGO VARCHAR(10)                not null,
    constraint PK_UTILIZADOR primary key (ID_UTILIZADOR)
 );
 
