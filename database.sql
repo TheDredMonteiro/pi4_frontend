@@ -2,7 +2,7 @@
 /* Table: FAVORITOS                                             */
 /*==============================================================*/
 create table FAVORITOS (
-   ID_FAVORITOS         INT4                 not null,
+   ID_FAVORITOS         SERIAL                 not null,
    ID_UTILIZADOR        INT4                 null,
    ID_PONTO_INTERESSE   INT4                 null,
    constraint PK_FAVORITOS primary key (ID_FAVORITOS)
@@ -33,7 +33,7 @@ ID_PONTO_INTERESSE
 /* Table: LANDING_PAGE                                          */
 /*==============================================================*/
 create table LANDING_PAGE (
-   ID_LANDING_PAGE      INT4                 not null,
+   ID_LANDING_PAGE      SERIAL                 not null,
    ID_UTILIZADOR        INT4                 not null,
    HERO_TITULO          VARCHAR(100)         not null,
    HERO_DESCRICAO       VARCHAR(250)         null,
@@ -96,7 +96,7 @@ ID_PONTO_INTERESSE
 /* Table: PONTOS_INTERESSE                                      */
 /*==============================================================*/
 create table PONTOS_INTERESSE (
-   ID_PONTO_INTERESSE   INT4                 not null,
+   ID_PONTO_INTERESSE   SERIAL                 not null,
    ID_TIPO_PONTO_INTERESSE INT4                 not null,
    ID_REGIAO            INT4                 not null,
    ID_UTILIZADOR        INT4                 not null,
@@ -142,7 +142,7 @@ ID_UTILIZADOR
 /* Table: RECOMPENSAS                                           */
 /*==============================================================*/
 create table RECOMPENSAS (
-   ID_RECOMPENSA        INT4                 not null,
+   ID_RECOMPENSA        SERIAL                 not null,
    ID_UTILIZADOR        INT4                 not null,
    RECOMPENSA           VARCHAR(50)          not null,
    DESCRICAO            TEXT                 null,
@@ -170,7 +170,7 @@ ID_UTILIZADOR
 /* Table: REGIOES                                               */
 /*==============================================================*/
 create table REGIOES (
-   ID_REGIAO            INT4                 not null,
+   ID_REGIAO            SERIAL                 not null,
    ID_UTILIZADOR        INT4                 null,
    REGIAO               VARCHAR(100)         not null,
    FOTOGRAFIA_1         VARCHAR(1024)        null,
@@ -195,7 +195,7 @@ ID_UTILIZADOR
 /* Table: RESERVAS                                              */
 /*==============================================================*/
 create table RESERVAS (
-   ID_RESERVA           INT4                 not null,
+   ID_RESERVA           SERIAL               not null,
    ID_UTILIZADOR        INT4                 not null,
    ID_VISITA            INT4                 not null,
    NUM_VAGAS            INT4                 null,
@@ -247,7 +247,7 @@ ID_TIPO_PONTO_INTERESSE
 /* Table: UTILIZADORES                                          */
 /*==============================================================*/
 create table UTILIZADORES (
-   ID_UTILIZADOR        INT4                 not null,
+   ID_UTILIZADOR        SERIAL                 not null,
    ID_ROLE              INT4                 not null,
    NOME                 VARCHAR(250)         not null,
    EMAIL                VARCHAR(150)         not null,
@@ -279,16 +279,16 @@ ID_ROLE
 /* Table: UTILIZADORES_CODIGOS                                  */
 /*==============================================================*/
 create table UTILIZADORES_CODIGOS (
-   ID_UTILIZADORES_CODIGO INT4                 not null,
    ID_UTILIZADOR        INT4                 not null,
-   constraint PK_UTILIZADORES_CODIGOS primary key (ID_UTILIZADORES_CODIGO)
+   ID_UTILIZADORES_CODIGO VARCHAR                not null,
+   constraint PK_UTILIZADOR primary key (ID_UTILIZADOR)
 );
 
 /*==============================================================*/
 /* Index: UTILIZADORES_CODIGOS_PK                               */
 /*==============================================================*/
 create unique index UTILIZADORES_CODIGOS_PK on UTILIZADORES_CODIGOS (
-ID_UTILIZADORES_CODIGO
+ID_UTILIZADOR
 );
 
 /*==============================================================*/
@@ -302,7 +302,7 @@ ID_UTILIZADOR
 /* Table: UTILIZADORES_ROLES                                    */
 /*==============================================================*/
 create table UTILIZADORES_ROLES (
-   ID_ROLE              INT4                 not null,
+   ID_ROLE              SERIAL                 not null,
    ROLE                 VARCHAR(50)          not null,
    constraint PK_UTILIZADORES_ROLES primary key (ID_ROLE)
 );
@@ -318,7 +318,7 @@ ID_ROLE
 /* Table: VISITAS                                               */
 /*==============================================================*/
 create table VISITAS (
-   ID_VISITA            INT4                 not null,
+   ID_VISITA            SERIAL                 not null,
    ID_PONTO_INTERESSE   INT4                 not null,
    ID_UTILIZADOR        INT4                 not null,
    DATA_VISITA          DATE                 null,
@@ -351,7 +351,7 @@ ID_UTILIZADOR
 /* Table: VOUCHER                                               */
 /*==============================================================*/
 create table VOUCHER (
-   ID_VOUCHER           INT4                 not null,
+   ID_VOUCHER           SERIAL                 not null,
    ID_UTILIZADOR        INT4                 not null,
    ID_RECOMPENSA        INT4                 not null,
    QRCODE               VARCHAR(50)          null,
