@@ -6,7 +6,9 @@ import ShowContent from './components/showPage';
 function App() {
   return (
   <Fragment>
-        <ShowContent />
+    <div className = "container">
+      <ShowContent />
+    </div>
   </Fragment>
   );
 }

@@ -1,7 +1,12 @@
-import React from "react";
+import React,{ Fragment } from "react";
 
 const ShowContent = () => {
-    return <h1>Landing Page</h1>;
+    return (
+    <Fragment>
+        <h1 className="text-center">Landing Page</h1>
+    </Fragment>
+    
+    );
 };
 
 export default ShowContent;
