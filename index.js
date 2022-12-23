@@ -7,7 +7,6 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
-//ROUTES
 
 //GET landing_page
 
