@@ -5,6 +5,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #616d38;
+  
 }
 
 a {
@@ -45,13 +46,12 @@ section {
   font-weight: 700;
   margin: 0;
   color: #d3d4a9;
-  text-transform: uppercase;
 }
 
 .section-header p {
   margin: 10px 0 0 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 42px;
   font-weight: 700;
   color: #616d38;
@@ -73,6 +73,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  background: #eef2e9;
 }
 
 .header.header-scrolled {
@@ -197,6 +198,12 @@ section {
 
 .hero .hero-img {
   text-align: right;
+}
+
+.hero .android{
+  margin-top: 100px;
+  width: 150px;
+
 }
 
 @media (min-width: 1024px) {
